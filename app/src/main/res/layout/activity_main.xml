@@ -9,24 +9,41 @@
         android:orientation="vertical"
         android:padding="20dp">
 
+        <Button
+            android:id="@+id/btnScan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Escanear dorso con la cámara" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Datos de acceso al chip (zona MRZ, dorso de la cédula)"
+            android:layout_marginTop="16dp"
+            android:text="O cargalo a mano desde las líneas del dorso:"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvGuide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="monospace"
+            android:padding="10dp"
+            android:background="#14000000"
+            android:textSize="12sp" />
 
         <EditText
             android:id="@+id/etDocNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Número de documento (MRZ)"
-            android:inputType="textCapCharacters" />
+            android:hint="Nro. documento (9 caracteres tras IEPRY)"
+            android:inputType="textCapCharacters|textNoSuggestions" />
 
         <EditText
             android:id="@+id/etBirth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Fecha de nacimiento (AAMMDD)"
+            android:hint="Nacimiento AAMMDD (ej. 900305)"
             android:inputType="number"
             android:maxLength="6" />
 
@@ -34,16 +51,23 @@
             android:id="@+id/etExpiry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Fecha de vencimiento (AAMMDD)"
+            android:hint="Vencimiento AAMMDD (ej. 330112)"
             android:inputType="number"
             android:maxLength="6" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/swDiag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Modo diagnóstico (sin datos: ver cómo es el chip)" />
 
         <TextView
             android:id="@+id/tvStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="Completá los datos y apoyá la cédula en la parte trasera del celular."
+            android:text="Escaneá el dorso o completá los datos, y después apoyá la cédula en la parte trasera del celular."
             android:textSize="16sp" />
 
         <ImageView
